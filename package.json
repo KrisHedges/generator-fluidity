@@ -1,0 +1,37 @@
+{
+  "name": "generator-fluidity",
+  "version": "0.0.0",
+  "description": "A generator for Yeoman",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "homepage": "https://github.com/InkSpeck/generator-fluidity",
+  "bugs": "https://github.com/InkSpeck/generator-fluidity/issues",
+  "author": {
+    "name": "Kris Hedges",
+    "email": "KrisHedges@gmail.com",
+    "url": "https://github.com/InkSpeck"
+  },
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inkspeck/generator-fluidity.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "yeoman-generator": "~0.10.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.9.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
