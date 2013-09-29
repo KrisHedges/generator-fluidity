@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "client.js",
+  "sourceRoot": "../../../src/assets/coffee/",
+  "sources": [
+    "client.coffee"
+  ],
+  "names": [],
+  "mappings": "AACA;CAAA,CAAA,CAAE,MAAA;CACA,EAAA,CAAA,GAAO,2BAAP;CAEC,CACG,EADJ,OAAA;CACI,CAAM,EAAN,CAAA,CAAA;CAAA,CACU,IAAV,EAAA;CADA,CAES,CAAA,GAAT,CAAA,CAAS,CAAC;CACP,CAAe,CAAhB,KAAA,CAAiB,MAAjB;CACE,EAA4B,CAAL,EAAvB,IAAuB,CAAvB,MAAA;CADF,QAAgB;CAHlB,MAES;CANb,KAGA;CAHF,EAAE;CAAF"
+}

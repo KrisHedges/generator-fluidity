@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "features.js",
+  "sourceRoot": "../../src/controllers/",
+  "sources": [
+    "features.coffee"
+  ],
+  "names": [],
+  "mappings": "AAKA;CAAA,KAAA,EAAA;;CAAA,CAAA,CAAW,IAAA,CAAX,WAAW;;CAAX,CAEA,CAAiB,GAAX,CAAN,EAAkB;CAChB,EAAG,CAAH,OAAA,OAAA;CACI,EAAD,CAAH,IAAA,GAAA;CAJF,EAEiB;CAFjB"
+}

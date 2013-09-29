@@ -1,0 +1,27 @@
+doctype 5
+html
+  head
+    title= title
+    meta(name='description', content='')
+    meta(name='author', content='')
+    meta(name="viewport", content="width=device-width,initial-scale=1.0,maximum-scale=1.0")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    link(rel="apple-touch-icon-precomposed", href="/images/icon.png")
+    link(rel="apple-touch-startup-image", href="images/phone-splash.png")
+    link(rel="apple-touch-startup-image", href="images/landscape-launch.png", media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)")
+    link(rel="apple-touch-startup-image", href="images/portrait-launch.png", media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)")
+    link(href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Roboto+Condensed:400,700', rel='stylesheet', type='text/css')
+  - if (env === 'development')
+    link(rel='stylesheet', href='/css/app.css')
+  - else
+    link(rel='stylesheet', href='/css/build.min.css')
+  body
+    block content
+  - if (env === 'development')
+    script(src='http://localhost:35729/livereload.js')
+    script(src='components/jquery/jquery.min.js')
+    script(src='components/underscore/underscore.js')
+    script(src='js/client.js')
+  - else
+    script(src='js/build.min.js')

@@ -1,0 +1,306 @@
+// # Import Fluidity
+
+@import 'fluidity'
+
+// # Set our color variables
+//
+// * black
+// * red
+// * white
+// * shapecolor (a dark gray)
+
+black = lighten(#000,6%)
+red = darken(#ff0011, 38%)
+white = lighten(#ccc, 5%)
+shapecolor = lighten(#000,18%)
+
+// # Mixins/Functions
+// ## sectionangler()
+//
+//  _usage:_
+//  ``` stylus
+//      #div-id
+//        width 60%
+//        height 100%
+//        sectionangler(after,0deg,0deg,-1,white)
+//  ```
+//  The sectionangular() mixin adds a pseudo element to a parent block element that decorates its parent with an L shape. you can draw one or two L shapes by using the "add" option.
+//
+// _options:_
+//
+// * add - Add pseudo element 'before' or 'after' you can add two shapes because of this option.
+// * rotangle - Rotation angle of the shape
+// * skw  - Skew angle of the shape
+// * sclx - Scale of the shape
+// * bcolor - Color of the shape
+
+sectionangler(add=before,rotangle=0deg,skw=0deg,sclx=1, bcolor=shapecolor)
+  if add is before
+    &:before
+      content "\00a0"
+      display block
+      position absolute
+      width 100%
+      height 110%
+      top -70px
+      left 0px
+      margin 0 0 0 0
+      border-width 0px 0px 16px 24px
+      padding-bottom 100px
+      border-style solid
+      border-color bcolor
+      transform scaleX(sclx) rotate(rotangle) skew(skw)
+      z-index -100 !important
+  if add is 'after'
+    &:after
+      content "\00a0"
+      display block
+      position absolute
+      width 100%
+      height 110%
+      top -70px
+      left 0px
+      margin 0 0 0 -3%
+      border-width 0px 0px 16px 24px
+      border-style solid
+      border-color bcolor
+      transform scaleX(sclx) rotate(rotangle) skew(skw)
+      z-index -100 !important
+
+// ## hammer()
+//
+//  _usage:_
+//  ``` stylus
+//      .hammer
+//        hammer()
+//  ```
+//  The hammer() mixin will turn an empty block element into a hammer graphic.
+//
+
+hammer()
+  position absolute
+  top -40px
+  right -60px
+  width 200px
+  height 75px
+  background-color shapecolor
+  border-top-right-radius 75px
+  transform skewY(15deg) scale(0.3) rotate(-45deg)
+  z-index -1 !important
+  &:before
+    content ''
+    position absolute
+    top 70px
+    left 50%
+    margin-left -14px
+    width 28px
+    height 215px
+    background-color shapecolor
+    transform skewY(-15deg)
+
+// ## nail()
+//
+//  _usage:_
+//  ``` stylus
+//      .nail
+//        nail()
+//  ```
+//  The nail() mixin will turn an empty block element into a nail graphic.
+//
+
+nail()
+  position fixed
+  top -10px
+  left 0px
+  width 6px
+  height 60px
+  background-color shapecolor
+  &:before
+    content ''
+    position absolute
+    top 0
+    left -5px
+    width 18px
+    height 10px
+    border-radius 50%
+    background-color shapecolor
+  &:after
+    content ''
+    position absolute
+    bottom -8px
+    width 0
+    height 0
+    border-left 3px solid transparent
+    border-right 3px solid transparent
+    border-top 8px solid shapecolor
+
+// ## download()
+//
+//  _usage:_
+//  ``` stylus
+//      .download
+//        download()
+//  ```
+//
+//  The download() mixin will turn an empty block element into a download arrow graphic.
+
+download()
+  position absolute
+  top -12px
+  right -10px
+  width 20px
+  height 60px
+  background shapecolor
+  transform scale(0.8)
+  z-index -1 !important
+  &:after
+    content ''
+    position absolute
+    bottom -20px
+    left -10px
+    width 0
+    height 0
+    border-left 20px solid transparent
+    border-right 20px solid transparent
+    border-top 40px solid shapecolor
+
+// # Setup our page styles
+
+html
+  min-width 320px
+  height 100%
+  margin 0
+  padding 0
+  transform rotate3d(0,0,0,0)
+
+body
+  position relative
+  font-size 1em
+  font-family 'Noto Sans'
+  color white
+  height 100%
+  margin 0
+  padding 0
+  background-color black
+  overflow-x hidden
+
+h1,h2
+  font-family 'Roboto Condensed'
+  font-weight 700
+  letter-spacing 0.07em
+h1
+  font-size 1.78em
+  margin 1em .4em .5em 0
+h2
+  font-size 1.45em
+  margin 0 1em 1em 0.5em
+h5
+  margin 1em 1em 0 .5em
+p
+  margin 0.25em 1em 1em 1em
+a
+  color red
+  font-weight 700
+  &:hover
+    color lighten(red,15%)
+
+section
+  background rgba(#ccc,12%)
+  position relative
+  padding 3%
+  width 80%
+  margin 0 7% 3em 7%
+  box-style border-box
+
+// # Begin Layout
+
+header
+  display block
+  position absolute
+  width 80%
+  height auto
+  top -155px
+  left 50%
+  margin-left -60%
+  padding 150px 1em 1em 1.2em
+  text-align center
+  background-color shapecolor
+  color lighten(gray, 90%)
+  transform rotate3d(-5,5,1,-18deg)
+  z-index 1000 !important
+  border 20px solid red
+  sectionangler(before,0deg,0deg,-1,shapecolor)
+  &:before
+    margin -45px 0 0 10px
+  sectionangler(after,0deg,0deg,-1,white)
+  &:after
+    margin 32px 0 0 -23px
+
+.container
+  grid(73%,73%)
+  top 0px
+  left 0px
+  z-index 1
+  overflow visible
+  section.workflow
+    margin-top 180px
+    sectionangler(before,3deg)
+    &:before
+      padding-bottom 20px
+    .hammer
+      hammer()
+  section.features
+    sectionangler(after,3deg,-1deg, -1)
+    #nails
+      position fixed
+      top -2px
+      left -4px
+      transform rotate(-45deg) scale(0.6)
+      z-index -1 !important
+      .nail1
+        nail()
+        transform rotate(-50deg)
+      .nail2
+        nail()
+        transform rotate(0deg)
+      .nail3
+        nail()
+        transform rotate(50deg)
+  section.install
+    sectionangler(before,3deg)
+    #download-arrow
+      download()
+
+// # Tablet Layout
+
+@media screen and (max-width:960px)
+  h1
+    font-size 1.45em
+    margin-right .75em
+    &:before
+      content ''
+      display inline-block
+      width 50px
+      height 100%
+  h2
+    font-size 1.2em
+  .container
+    grid(94%, 90%)
+    overflow visible
+
+// # Mobile Layout
+
+@media screen and (max-width: 600px)
+  h1
+    font-size 1.28em
+    &:before
+      content ''
+      display inline-block
+      width 30px
+      height 100%
+  .container
+    grid(99%, 320px)
+    section
+      margin-bottom 3.8em
+    section:first-child
+      margin-top 190px

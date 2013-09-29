@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "feature.js",
+  "sourceRoot": "../../src/models/",
+  "sources": [
+    "feature.coffee"
+  ],
+  "names": [],
+  "mappings": "AAEA;CAAA,KAAA,EAAA;;CAAA,CAAA,CACE,GADI,CAAN,CACE;KACE;CAAA,CAAO,EAAN,EAAA,QAAD;CAAA,CACa,IAAb,KAAA,8BADA;EAEA,IAHS;CAGT,CAAO,EAAN,EAAA,EAAD;CAAA,CACa,IAAb,KAAA,wBADA;EAEA,IALS;CAKT,CAAO,EAAN,EAAA,CAAD;CAAA,CACa,IAAb,KAAA,+BADA;MALS;CADb,GAAA;CAAA"
+}

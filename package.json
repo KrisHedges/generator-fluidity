@@ -1,9 +1,16 @@
 {
   "name": "generator-fluidity",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.1.0",
+  "description": "This generator will create a front-end development environment using Express, Coffeescript, and Stylus with Fluidity. It will create a base app and file structure. Using the 'grunt dev' task you'll have features like live-reload on both the client-side and server-side changes to view files and coffee-hinting throughout the entire app. Using the 'grunt build' task will concat/compress/minify/lint/hint client-side js/css and dynamically generate documentation using docco and a generated styleguide with styldocco. A generator for Yeoman",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "generator-fluidity",
+    "fluidity",
+    "stylus",
+    "front-end development",
+    "express js",
+    "coffeescript",
+    "live-reload"
   ],
   "homepage": "https://github.com/InkSpeck/generator-fluidity",
   "bugs": "https://github.com/InkSpeck/generator-fluidity/issues",
@@ -21,7 +28,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.10.2"
+    "yeoman-generator": "~0.10.2",
+    "colors": "~0.6.2"
   },
   "devDependencies": {
     "mocha": "~1.9.0"
