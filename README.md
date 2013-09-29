@@ -1,4 +1,4 @@
-# Generator-fluidity
+# generator-fluidity
 This generator will create a front-end development environment using Express, Coffeescript, and Stylus with Fluidity. It will create a base app and file structure.
 
 Using the 'grunt dev' task you'll have features like live-reload on both the client-side and server-side changes to view files and coffee-hinting throughout the entire app.
