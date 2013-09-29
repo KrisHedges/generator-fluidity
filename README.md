@@ -3,7 +3,7 @@ This generator will create a front-end development environment using Express, Co
 
 Using the 'grunt dev' task you'll have features like live-reload on both the client-side and server-side changes to view files and coffee-hinting throughout the entire app.
 
-Using the 'grunt build' task will concat/compress/minify/lint/hint client-side js/css and dynamically generate documentation using docco and a generated styleguide with styldocco. A generator for Yeoman
+Using the 'grunt build' task will concat/compress/minify/lint/hint client-side js/css and dynamically generate documentation using docco and a generated styleguide with styldocco.
 
 ## Getting started
 
