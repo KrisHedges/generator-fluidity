@@ -6,7 +6,18 @@ block content
     section.install
       #download-arrow
       h2 Install:
-
+      | Prerequirements:
+      br
+      | The documentation generation requires the python library Pygments for syntax highlighting in code.
+      | Install Pygments:
+      pre sudo easy_install Pygments
+      | Make sure you have yo (https://github.com/yeoman/yo) installed:
+      | Installation:
+      pre npm install -g yo
+      | Install the generator:
+      pre npm install -g generator-fluidity
+      | Run:
+      pre yo fluidity
     section.features
       #nails
         .nail1
