@@ -3,18 +3,52 @@ block content
   header
     h1= title
   .container
-    section.workflow
-      .hammer
-      h2 Getting Started
-      p Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna.
-      p Praesent <a href="#">commodo cursus magna</a>, vel scelerisque nisl consectetur et. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    section.install
+      #download-arrow
+      h2 Install:
+
     section.features
       #nails
         .nail1
         .nail2
         .nail3
       h2 Features
-    section.install
-      #download-arrow
-      h2 Install:
-      p Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta <a href="#">gravida</a> at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna.
+    section.workflow
+      .hammer
+      h2 Getting Started
+      p This generator will create a front-end development environment using Express, Coffeescript, and Stylus with Fluidity. It will create a base app and file structure. It provides several grunt tasks.
+      pre ~$ grunt dev
+      p
+        |  Using the dev task you'll have features like live-reload on both the client-side and server-side changes to view files and coffee-hinting throughout the entire app.
+      p
+        |  The dev task consists of several other sub-tasks that are fired in this order.
+      ul
+        li grunt env:dev - Sets the Node environment variable to development
+        li grunt clean:all - Removes all compiled assets
+        li grunt coffeelint - Runs all of the coffee files through coffeelint
+        li grunt coffee:compile_app_dev - compiles coffee files in app
+        li grunt coffee:compile_assets_dev - compiles coffee files in assets
+        li grunt stylus:compile_dev  - compiles stylus files in assets
+        li grunt develop - starts the development web server
+        li grunt watch - watches files and restarts the server and or sends the live-reload message to the browser.
+      br
+      pre ~$ grunt build
+      p
+        | Using the 'grunt build' task will concat/compress/minify/lint/hint client-side js/css and dynamically generate documentation using docco and a generated styleguide with styldocco.
+      p
+        | The build task consists of several other sub-tasks that are fired in this order
+      ul
+        li grunt env:build - Sets the Node environment variable to production
+        li grunt clean:all -  - Removes all compiled assets
+        li grunt makedoc - Compiles docs with docco & styledocco
+        li grunt coffeelint - Runs all of the coffee files through coffeelint
+        li grunt coffee:compile_app_build - Compiles coffee files in app
+        li grunt coffee:compile_assets_build - Compiles coffee files in assets
+        li grunt stylus:compile_build - Compiles stylus files in assets
+        li grunt concat:components - Concatenates all of the bower components in the order given in the grunt file.
+        li grunt concat:assets - Concatenates all of the compiled js assets
+        li grunt concat:build - Combines the the concatenated clientside javascript
+        li grunt uglify - Uglifies the client-side JS
+        li grunt cssmin - Minifies the compiled styles
+        li grunt clean:build - Cleans the old assets and tmp files
+        li grunt develop - Starts the development webserver to verify the compiled assets.

@@ -173,7 +173,7 @@ module.exports = (grunt) ->
           livereload: true
 
       jade:
-        files: ['views/**/*.jade']
+        files: ['src/views/**/*.jade']
         tasks: ['develop']
         options:
           livereload: true
