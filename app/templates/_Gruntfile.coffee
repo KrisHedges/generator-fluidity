@@ -1,5 +1,5 @@
 module.exports = (grunt) ->
-  application_name = "<%= appName %>"
+  application_name = "test"
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
 
@@ -92,7 +92,7 @@ module.exports = (grunt) ->
       options:
         seperator: ';'
       components:
-        src: ['app/public/components/underscore/underscore.js', 'app/public/components/jquery/jquery.js']
+        src: ['app/public/components/zepto/zepto.js', 'app/public/components/fluidity-ui/fluidity.js']
         dest : 'tmp/components-concat.js'
       assets:
         src: ['app/public/js/**/*.js']
@@ -244,5 +244,4 @@ module.exports = (grunt) ->
    'uglify',
    'cssmin',
    'clean:build',
-   'develop',
-   'watch']
+   'develop']

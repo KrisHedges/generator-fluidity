@@ -41,7 +41,7 @@ sectionangler(add=before,rotangle=0deg,skw=0deg,sclx=1, bcolor=shapecolor)
       display block
       position absolute
       width 100%
-      height 110%
+      height 105%
       top -70px
       left 0px
       margin 0 0 0 0
@@ -242,18 +242,17 @@ header
   left 0px
   z-index 1
   overflow visible
-  section.workflow
-    sectionangler(before,3deg)
-    &:before
-      padding-bottom 20px
-    .hammer
-      hammer()
+  section.install
+    margin-top 180px
+    sectionangler(before,6deg, 5deg, 0.98)
+    #download-arrow
+      download()
   section.features
     sectionangler(after,3deg,-1deg, -1)
     #nails
       position fixed
-      top -2px
-      left -4px
+      top 4px
+      left 0px
       transform rotate(-45deg) scale(0.6)
       z-index -1 !important
       .nail1
@@ -265,11 +264,13 @@ header
       .nail3
         nail()
         transform rotate(50deg)
-  section.install
-    margin-top 180px
+  section.workflow
     sectionangler(before,3deg)
-    #download-arrow
-      download()
+    &:before
+      padding-bottom 20px
+    .hammer
+      hammer()
+
 
 // # Tablet Layout
 
